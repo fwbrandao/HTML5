@@ -1,0 +1,77 @@
+/* ------------------------------------
+
+	FICTIONAL WEBSITE SCRIPT FILE
+
+----------------------------------- */
+
+
+/* -----------------------------------
+
+	MOBILE DEVICE MENU SCRIPT
+
+----------------------------------- */
+
+
+$("#mainNav").click(function() {
+
+		$("#mainMenu").slideToggle();
+});
+
+$("#mainMenu li").on("click", function() {
+
+		if($(window).width() < 1024 ) {
+
+			$("#mainNav").click();
+		}
+});
+
+
+$(window).resize(function() {
+
+	if($(window).width() > 1024 ) {
+
+			$("#mainNav").removeAttr("style");
+	}
+});
+
+
+/* -----------------------------------
+
+	SMOOTH SCROLLING OF ALL LINKS
+
+----------------------------------- */
+
+$(function() {
+
+	$('.navC a, .actionB a, .logoC a').bind('click', function(event) {
+
+		var $anchor = $(this);
+		$('html, body').stop().animate({
+
+			scrollTop:
+			$($anchor.attr('href')).offset().top - 100
+		}, 1000);
+
+		event.preventDefault();
+
+	});
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
